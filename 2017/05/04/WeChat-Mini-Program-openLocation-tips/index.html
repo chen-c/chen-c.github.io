@@ -1,158 +1,701 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content="" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <title>微信小程序wx.openLocation无效(iOS)</title>
-  <meta name="author" content="chenc">
-  <meta name="description" content="微信小程序 wx.openLocation 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。
-解决办法：尊重一下文档 wx">
   
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="微信,开发," />
+
+
+
+
   
-  <meta property="og:title" content="微信小程序wx.openLocation无效(iOS)"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="Morn.Chen - Hello"/>
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="Morn.Chen - Hello" type="application/atom+xml">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+  <link rel="alternate" href="/atom.xml" title="Morn.Chen - Hello" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="微信小程序 wx.openLocation 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。 解决办法：尊重一下文档 wx.openlocationobject 会发现输入参数的经纬度类型是float，而iOS下似乎并没有">
+<meta name="keywords" content="微信,开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序wx.openLocation无效(iOS)">
+<meta property="og:url" content="http://chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips/index.html">
+<meta property="og:site_name" content="Morn.Chen - Hello">
+<meta property="og:description" content="微信小程序 wx.openLocation 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。 解决办法：尊重一下文档 wx.openlocationobject 会发现输入参数的经纬度类型是float，而iOS下似乎并没有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-14T07:27:47.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序wx.openLocation无效(iOS)">
+<meta name="twitter:description" content="微信小程序 wx.openLocation 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。 解决办法：尊重一下文档 wx.openlocationobject 会发现输入参数的经纬度类型是float，而iOS下似乎并没有">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips/"/>
+
+
+
+
+
+  <title>微信小程序wx.openLocation无效(iOS) | Morn.Chen - Hello</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="behind">
-      <a href="/" class="back black-color">
-        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M2 30 L30 2 M30 30 L2 2"></path>
-        </svg>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Morn.Chen - Hello</span>
+        <span class="logo-line-after"><i></i></span>
       </a>
-      <div class="description">
-        &nbsp;Mron
-      </div>
     </div>
-    <div class="container">
       
+        <p class="site-subtitle">Don't panic!</p>
+      
+  </div>
 
-  <article class="standard post">
-    <div class="title">
-      
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
   
-    <h1 class="page-title center">
-        微信小程序wx.openLocation无效(iOS)
-    </h1>
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/atom.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
-
-    </div>
-    <div class="meta center">
-      
-<time datetime="2017-05-03T22:00:39.000Z">
-<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
-  </svg>
-  &nbsp;
-  2017-05-04
-</time>
+  
+</nav>
 
 
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chen chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Morn.Chen - Hello">
+    </span>
 
     
-    &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"></circle>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
-    </svg>
-    &nbsp;
-    <a href="/categories/踩坑/">踩坑</a>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信小程序wx.openLocation无效(iOS)</h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T06:00:39+08:00">
+                2017-05-04
+              </time>
+            
 
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/踩坑/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
 
     
-    &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-      <circle cx="24" cy="8" r="2"></circle>
-      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
-    </svg>
-    &nbsp;
-    <a href="/tags/微信/">微信</a>·<a href="/tags/开发/">开发</a>
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-
-    </div>
-    <hr>
-    <div class="picture-container">
       
-    </div>
-    <p>微信小程序 <em>wx.openLocation</em> 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。<br>然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。</p>
+      
+
+      
+        <p>微信小程序 <em>wx.openLocation</em> 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。<br>然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。</p>
 <p>解决办法：尊重一下文档 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/location.html#wxopenlocationobject" target="_blank" rel="external">wx.openlocationobject</a></p>
 <p>会发现输入参数的经纬度类型是float，而iOS下似乎并没有对输入项做转换，因此需要自己做一下转换。</p>
 <p>request里的经纬度做如下处理即可：</p>
 <p>lat = parseFloat(lat);</p>
 <p>PS：所以，要尊重下文档对吧，如支付宝般：）</p>
 
+      
+    </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信/" rel="tag"># 微信</a>
+          
+            <a href="/tags/开发/" rel="tag"># 开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/05/newyaer-2017/" rel="next" title="新年">
+                <i class="fa fa-chevron-left"></i> 新年
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
   </article>
-  </script>
-    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
-  </div>
 
 
 
-
+    <div class="post-spread">
+      
     </div>
   </div>
-  <footer class="page-footer"><div class="clearfix">
-</div>
-<div class="right-foot container">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"></path>
-        </svg>
-        </a>
-        © 2017
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    <div class="secondrow">
-        <a href="http://chenchen.org">
-        C
-        </a>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">chen chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
     </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chen chen</span>
+
+  
 </div>
-<div class="clearfix">
-</div>
-</footer>
-  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/search.min.js"></script>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
 <script type="text/javascript">
-
-// disqus scripts
-
-
-// dropdown scripts
-$(".dropdown").click(function(event) {
-  var current = $(this);
-  event.stopPropagation();
-  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
-});
-$(document).click(function(){
-    $(".dropdown-content").removeClass("open");
-})
-
-var path = "/search.xml";
-searchFunc(path, 'local-search-input', 'local-search-result');
-
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
