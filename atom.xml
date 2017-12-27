@@ -5,12 +5,12 @@
   <subtitle>Don&#39;t panic!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://chenchen.org/"/>
+  <link href="https://www.chenchen.org/"/>
   <updated>2017-12-27T03:48:03.515Z</updated>
-  <id>http://chenchen.org/</id>
+  <id>https://www.chenchen.org/</id>
   
   <author>
-    <name>chen chen</name>
+    <name>Chenc</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>微信小程序wx.openLocation无效(iOS)</title>
-    <link href="http://chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html"/>
-    <id>http://chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html</id>
+    <link href="https://www.chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html"/>
+    <id>https://www.chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html</id>
     <published>2017-05-03T22:00:39.000Z</published>
     <updated>2017-12-27T03:48:03.515Z</updated>
     
@@ -34,19 +34,19 @@
     
     </summary>
     
-      <category term="踩坑" scheme="http://chenchen.org/categories/%E8%B8%A9%E5%9D%91/"/>
+      <category term="踩坑" scheme="https://www.chenchen.org/categories/%E8%B8%A9%E5%9D%91/"/>
     
     
-      <category term="微信" scheme="http://chenchen.org/tags/%E5%BE%AE%E4%BF%A1/"/>
+      <category term="微信" scheme="https://www.chenchen.org/tags/%E5%BE%AE%E4%BF%A1/"/>
     
-      <category term="开发" scheme="http://chenchen.org/tags/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="https://www.chenchen.org/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>新年</title>
-    <link href="http://chenchen.org/2017/02/05/newyaer-2017.html"/>
-    <id>http://chenchen.org/2017/02/05/newyaer-2017.html</id>
+    <link href="https://www.chenchen.org/2017/02/05/newyaer-2017.html"/>
+    <id>https://www.chenchen.org/2017/02/05/newyaer-2017.html</id>
     <published>2017-02-04T22:45:17.000Z</published>
     <updated>2017-12-27T03:47:59.728Z</updated>
     
@@ -62,17 +62,17 @@
     
     </summary>
     
-      <category term="生活" scheme="http://chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="新年" scheme="http://chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
+      <category term="新年" scheme="https://www.chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>2013.1.4</title>
-    <link href="http://chenchen.org/2013/01/04/2013.1.4.html"/>
-    <id>http://chenchen.org/2013/01/04/2013.1.4.html</id>
+    <link href="https://www.chenchen.org/2013/01/04/2013.1.4.html"/>
+    <id>https://www.chenchen.org/2013/01/04/2013.1.4.html</id>
     <published>2013-01-04T00:00:00.000Z</published>
     <updated>2017-12-27T03:47:38.194Z</updated>
     
@@ -87,10 +87,10 @@
     
     </summary>
     
-      <category term="生活" scheme="http://chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="新年" scheme="http://chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
+      <category term="新年" scheme="https://www.chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
     
   </entry>
   
