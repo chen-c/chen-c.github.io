@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2017-12-28T02:03:49.000Z</updated>
+  <updated>2017-12-28T03:01:37.000Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html"/>
     <id>https://www.chenchen.org/2017/05/04/WeChat-Mini-Program-openLocation-tips.html</id>
     <published>2017-05-03T22:00:39.000Z</published>
-    <updated>2017-12-28T02:03:49.000Z</updated>
+    <updated>2017-12-28T03:01:37.000Z</updated>
     
     <content type="html"><![CDATA[<p>微信小程序 <em>wx.openLocation</em> 位置api应该是一个lbs中非常常用的一个api，使用微信内置地图查看位置，经常与wx.getLocation接口一起使用，将用户定位到地图中心点。<br>然而会发现有时候在iOS上会失效，到不了指定经纬度，安卓以及开发工具中都正常。<br><a id="more"></a></p><p>解决办法：尊重一下文档 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/location.html#wxopenlocationobject" target="_blank" rel="noopener">wx.openlocationobject</a></p><p>会发现输入参数的经纬度类型是float，而iOS下似乎并没有对输入项做转换，因此需要自己做一下转换。</p><p>request里的经纬度做如下处理即可：</p><p>lat = parseFloat(lat);</p><p>PS：所以，要尊重下文档对吧，如支付宝般：）</p>]]></content>
     
@@ -31,12 +31,12 @@
     
     </summary>
     
-      <category term="踩坑" scheme="https://www.chenchen.org/categories/%E8%B8%A9%E5%9D%91/"/>
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
     
+    
+      <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
     
       <category term="微信" scheme="https://www.chenchen.org/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-      <category term="开发" scheme="https://www.chenchen.org/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -68,18 +68,23 @@
     <link href="https://www.chenchen.org/2013/01/04/2013.1.4.html"/>
     <id>https://www.chenchen.org/2013/01/04/2013.1.4.html</id>
     <published>2013-01-04T00:00:00.000Z</published>
-    <updated>2017-12-28T02:03:30.310Z</updated>
+    <updated>2017-12-28T03:15:32.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在对末日的好奇和期待中，2012过去了。2013如约而至，也许大家都喜欢用重生来形容这一年。所有人都希望能有一次重生重新开始的机会，很可惜那只存在于WOW中，这是一列渐行渐远的绿皮火车，你永远无法预知那些人从哪来在哪下，每一次见面也许都是最后一面。正如少年派中的那句话：“人生也许就是不断地放下，然而令人痛心的是，我都没能好好地与他们道别”。用心对待每一天的人和事吧，毕竟，这没有重来的机会。<br><a id="more"></a></p><p>2013.1.4，传说中的爱你一生一世，也是我又一岁的新开始。这一天，杭州漫天飞雪；这一天，生活又将开始。</p><p><img src="https://v.moring.pw/mchen/img/2013/7c8d19f7jw1e0ggduucb0j-300x200.jpg" alt="2013"></p>]]></content>
+    <content type="html"><![CDATA[<p>在对末日的好奇和期待中，2012过去了。2013如约而至，也许大家都喜欢用重生来形容这一年。所有人都希望能有一次重生重新开始的机会，很可惜那只存在于WOW中，这是一列渐行渐远的绿皮火车，你永远无法预知那些人从哪来在哪下，每一次见面也许都是最后一面。正如少年派中的那句话：“人生也许就是不断地放下，然而令人痛心的是，我都没能好好地与他们道别”。用心对待每一天的人和事吧，毕竟，这没有重来的机会。</p><p>2013.1.4，传说中的爱你一生一世，也是我又一岁的新开始。这一天，杭州漫天飞雪；这一天，生活又将开始。</p><p><img src="https://v.moring.pw/mchen/img/2013/7c8d19f7jw1e0ggduucb0j-300x200.jpg" alt="2013"></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在对末日的好奇和期待中，2012过去了。2013如约而至，也许大家都喜欢用重生来形容这一年。所有人都希望能有一次重生重新开始的机会，很可惜那只存在于WOW中，这是一列渐行渐远的绿皮火车，你永远无法预知那些人从哪来在哪下，每一次见面也许都是最后一面。正如少年派中的那句话：“人生也许就是不断地放下，然而令人痛心的是，我都没能好好地与他们道别”。用心对待每一天的人和事吧，毕竟，这没有重来的机会。&lt;br&gt;
+      
+      
+        &lt;p&gt;在对末日的好奇和期待中，2012过去了。2013如约而至，也许大家都喜欢用重生来形容这一年。所有人都希望能有一次重生重新开始的机会，很可惜那只存在于WOW中，这是一列渐行渐远的绿皮火车，你永远无法预知那些人从哪来在哪下，每一次见面也许都是最后一面。正如少年派中的那句话：“人
+      
     
     </summary>
     
       <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
       <category term="新年" scheme="https://www.chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
     
@@ -90,7 +95,7 @@
     <link href="https://www.chenchen.org/2009/11/16/One-year.html"/>
     <id>https://www.chenchen.org/2009/11/16/One-year.html</id>
     <published>2009-11-15T23:00:00.000Z</published>
-    <updated>2017-12-27T09:11:41.429Z</updated>
+    <updated>2017-12-28T03:03:40.232Z</updated>
     
     <content type="html"><![CDATA[<p>窗外冬雨沥沥，我蜷缩着坐在电脑前，杭州的冬天真不是一般的冷，阴，冷，湿交织在一起，构成了杭州的冬天，也许杭州的风景能称之为天堂，但环境绝对配不上天堂的名号。夏天的酷热，冬天的阴冷，永远灰蒙蒙的天空和拥堵的交通，他远远还没有达到一个宜居城市的标准，只因为他是省会。<br><a id="more"></a></p><p>看着日历，突然想起了去年的这个时候。那时候，11月和12月，正是我在四处奔波的日子，从温州跑到杭州又去了宁波还到了北京又回了宁波再上杭州最后回温州，冗长而又乏味的旅途，为了工作奔波，为了前途奔波。好多次跨过整个浙江来到杭州参加各种面试，等来的都是杳无音信。跑到宁波却又被告知考试取消，终于还是去了北京放了一星期假，四处游玩了一下，虽然目的是去比赛，但这对我已经不再重要。</p><p>记得2007年，我带着兴奋第一次来到了北京，四周闲逛，果然毛主席脚下，一切太平和谐，一个铜板都能让我吃得心满意足。2008年，当我再次回到这片土地的时候，带着一丝回忆和惆怅，总算登上了长城，在瑟瑟寒风中，吃了一碗兰州拉面就搞定了一切。当时间跑到2009年时，我已经不会再回到那里，穿着登上长城的装备坐在电脑前，却发现这里比长城之巅更加之冷。</p><p>昨天看到一句话，以后再也没有同桌了。恩，高中之后，已无同桌；大学之后，也已失去了最真的校园。</p>]]></content>
     
@@ -103,7 +108,90 @@
       <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
       <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Paypal国际版网站集成简易教程（三）：IPN的使用</title>
+    <link href="https://www.chenchen.org/2008/07/17/Paypal_integrated_3.html"/>
+    <id>https://www.chenchen.org/2008/07/17/Paypal_integrated_3.html</id>
+    <published>2008-07-17T12:10:00.000Z</published>
+    <updated>2017-12-28T08:17:28.460Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"></p><blockquote><p>什么是即时付款通知IPN<br>当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。</p></blockquote><a id="more"></a><p>最近事情比较多，一直没有继续更新，不好意思了，今天难得有空，就把最重要的一段先发上来了。<br>相信大部分网站集成Paypal都希望能够实现客户支付完成后返回信息到自己的网站，然后处理这些信息。比如客户在你的网站上购买了一个产品，通过Paypal完成了支付，接着Paypal告诉你的网站客户完成了支付以及支付信息，最后你的网站将这些信息记录到你自己的数据库中，并且将你的客户订单状态设为已支付，接着你就可以进行一系列的相关订单的后续操作。<br>IPN就能帮助我们实现这个功能，IPN示意图如下（来自Paypal.com）：</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_0.jpg" alt="Paypal"></p><p>当客户完成支付，Paypal会在后台通过post方式向你的服务器传送交易数据，来实现网站集成的功能。<br>接下来我们就来看IPN的实现方法。<br>第一步，你需要一个sandbox的帐号，这很重要，因为它能让你随心所欲的进行测试，而不用担心资金在天上飞。注册地址：<a href="https://developer.paypal.com" target="_blank" rel="noopener">https://developer.paypal.com</a><br>第二步，登陆sandbox，新建一个商家帐号（卖方）和一个客户账号（买方），其中卖方帐号必须是Premier或者Business，不然无法使用IPN功能。</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_01.jpg" alt="Paypal"></p><p>新建买家帐号的时候记得在Account Balance中加上金额，不然你就没钱买东西了，如果paypal.com的帐号也能这样加钱多好。<br>新建完两个帐号：</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_00.jpg" alt="Paypal"></p><p>卖家帐号的test mode要设为enabled。<br>选中business帐号，点击下面的Enter Sandbox Test Site进入sandbox Test Site，登录，就像普通Paypal帐号的管理页面一样。</p><p>点击Profile，在Selling Preferences中选择Instant Payment Notification Preferences，点击edit加入IPN信息返回的地址，记得勾上前面那个选项，我是用.net写的接受文件，所以我的IPN地址是<a href="http://www.chenchen.org/ipn.aspx">http://www.chenchen.org/ipn.aspx</a> ,地址只要能在互联网上访问到就可以了。</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_02.jpg" alt="Paypal"></p><p>在Profile -&gt; Selling Preferences -&gt;Website Payment Preferences选项中，有一个Auto Return的选项，将它设为on，并且在下面的return地址中填入你希望的客户支付完成后返回的地址：<br>以上就完成了商家端的设置。</p><p>接下来是你网站上ipn.aspx文件的编写，这个是用来接收支付数据的，是非常关键的一个文件。<br>文件环境，.net 2.0，语言C#。<br>Ipn.aspx文件：此文件不用修改任何东西，代码都在cs文件中。<br>Ipn.aspx.cs文件：关键代码<br>定义一个VerifyIPN()函数：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">VerifyIPN</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">string</span> strFormValues = Request.Form.ToString();</span><br><span class="line">        <span class="keyword">string</span> strNewValue;</span><br><span class="line">        <span class="keyword">string</span> strResponse;</span><br><span class="line">        <span class="keyword">string</span> serverURL = <span class="string">"https://www.sandbox.paypal.com/cgi-bin/webscr"</span>;</span><br><span class="line"></span><br><span class="line">        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(serverURL);</span><br><span class="line">        req.Method = <span class="string">"POST"</span>;</span><br><span class="line">        req.ContentType = <span class="string">"application/x-www-form-urlencoded"</span>;</span><br><span class="line">        strNewValue = strFormValues + <span class="string">"&amp;cmd;=_notify-validate"</span>;</span><br><span class="line">        req.ContentLength = strNewValue.Length;</span><br><span class="line"></span><br><span class="line">        StreamWriter stOut = <span class="keyword">new</span> StreamWriter(req.GetRequestStream(), System.Text.Encoding.ASCII);</span><br><span class="line">        stOut.Write(strNewValue);</span><br><span class="line">        stOut.Close();</span><br><span class="line"></span><br><span class="line">        StreamReader stIn = <span class="keyword">new</span> StreamReader(req.GetResponse().GetResponseStream());</span><br><span class="line">        strResponse = stIn.ReadToEnd();</span><br><span class="line">        stIn.Close();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> strResponse == <span class="string">"VERIFIED"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这段代码的作用是判断IPN信息是否来自Pyapal，如果不进行判断，那么恶意用户完全可以模拟一个信息post到你的网站上，让你认为订单已经完成支付，所以，必须首先对接受到的信息进行验证。<br>代码的基本原理，serverURL定义了验证地址，sandbox为：<a href="https://www.sandbox.paypal.com/cgi-bin/webscr，Paypal.com就是https://www.paypal.com/cgi-bin/webscr。" target="_blank" rel="noopener">https://www.sandbox.paypal.com/cgi-bin/webscr，Paypal.com就是https://www.paypal.com/cgi-bin/webscr。</a><br>将paypal发送过来的所有信息加上一个&cmd;=_notify-validate参数，表示对这个信息进行验证，全部发送回paypal验证，如果信息确实存在，则返回VERIFIED字符串。<br>验证成功后，就可以用如下形式获得交易信息：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public partial class paypal_ipn : System.Web.UI.Page</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">Page_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (VerifyIPN())<span class="comment">//验证成功</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">string</span> ppTx = Request.Form[<span class="string">"txn_id"</span>].ToString();<span class="comment">//获取post中的各项变量值</span></span><br><span class="line">                …</span><br><span class="line">            执行将数据写入数据库等操作</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">VerifyIPN</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        具体代码见上。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样，就实现了将支付信息传回网站的功能。注：当交易状态发生改变时，paypal也会返回一个ipn，比如完成支付，退款等等。</p><p>介绍一下sandbox中IPN测试工具，登陆sandbox主帐号，就是你在sandbox上注册的那个，不是那些卖家/买家帐号。选择Test Tools -&gt; Instant Payment Notification (IPN) Simulator：输入你的ipn接受文件地址，选择ipn信息的方式，然后会让你填具体信息内容，再点击Send IPN，就能模拟一个ipn到你网站的页面，可以用来测试IPN是否正常工作。</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_03.jpg" alt="Paypal"></p><p>不过这个工具有个小BUG，就是发送的IPN里不包括contact_phone这个变量，但是实际的IPN里是有的，这里要注意一下。<br>注：可以在商家帐号的Profile -&gt; Selling Preferences -&gt;Website Payment Preferences中，选择Contact Telephone Number这一栏，来确定是否需要发送买家联系电话。</p><p><img src="https://v.moring.pw/mchen/img/2008/paypal_04.jpg" alt="Paypal"></p><blockquote><p><strong>此文来自时光旅行，内容已不维护:) </strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://v.moring.pw/mchen/img/2008/7-140504095212.jpg&quot; alt=&quot;Paypal&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;什么是即时付款通知IPN&lt;br&gt;当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
+    
+      <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Paypal国际版网站集成简易教程（二）：快速加入支付按钮</title>
+    <link href="https://www.chenchen.org/2008/07/10/Paypal_integrated_2.html"/>
+    <id>https://www.chenchen.org/2008/07/10/Paypal_integrated_2.html</id>
+    <published>2008-07-10T11:15:00.000Z</published>
+    <updated>2017-12-28T05:09:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"><br>本篇主要介绍如何在你的网站上快速加入paypal支付按钮，通过这个按钮，人们可以方便快速的付款到你的paypal帐户。<br><a id="more"></a><br>首先，你需要注册一个paypal帐户，帐户类型分为Personal（个人）、Premier（高级）和Business（商业），他们的差别对于开发者来说主要是返回的信息，Personal的不能使用IPN和PDT等商家工具，即不能获取交易信息，但是Personal帐户收款无需手续费；Premier和Business当然就提供了IPN和PDT功能，能够在客户支付成功后，将交易信息传给指定的网站，用来二次使用。Premier和Business使用上的差异我不是很清楚，应该是月收款额和手续费上的区别吧。</p><p>这里插进来介绍一下paypal sandbox，也就是沙盒，是paypal提供给开发者的一个工具，非常好用，你可以在<a href="https://developer.paypal.com/" target="_blank" rel="noopener">https://developer.paypal.com/</a> 注册和使用它。登录以后可以新建帐户，设置余额和帐户类型，有一点要注意，每次使用时必须先登录sandbox才能使用新建的那些帐户。Sndbox里面有个测试工具，可以发送IPN的，以后会用到。</p><p>接着上面的内容，注册完帐户以后，当然，一开始开发最好使用sandbox，不然资金转来转去手续费都扣光了，paypal的费率如下：<br><a href="https://www.paypal.com/c2/webapps/mpp/paypal-seller-fees?locale.x=zh_C2" target="_blank" rel="noopener">商家收费</a><br>比起国内的支付工具，paypal贵了好多，当然，和国情也有关系。<br>接下来是按钮的代码，很简单，就是一个普通的网页表单代码：</p><pre><code class="xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"https://www.paypal.com/cgi-bin/webscr"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"cmd"</span> <span class="attr">value</span>=<span class="string">"_xclick"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"business"</span> <span class="attr">value</span>=<span class="string">"sample@sample.com"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"item_name"</span> </span><span class="tag">   <span class="attr">value</span>=<span class="string">"Item Name Goes Here"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"item_number"</span> </span><span class="tag">   <span class="attr">value</span>=<span class="string">"Item Number Goes Here"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"amount"</span> <span class="attr">value</span>=<span class="string">"100.00"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"no_shipping"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"no_note"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"currency_code"</span> <span class="attr">value</span>=<span class="string">"USD"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"bn"</span> <span class="attr">value</span>=<span class="string">"IC_Sample"</span>&gt;</span>   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"https://www.paypal.com/</span></span><span class="tag"><span class="string">   en_US/i/btn/x-click-but23.gif"</span> </span><span class="tag">   <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">alt</span>=<span class="string">"Make payments with payPal - it's fast, </span></span><span class="tag"><span class="string">   free and secure!"</span>&gt;</span>   <span class="tag">&lt;<span class="name">img</span> <span class="attr">alt</span>=<span class="string">""</span> </span><span class="tag">   <span class="attr">src</span>=<span class="string">"https://www.paypal.com/en_US/i/scr/pixel.gif"</span> </span><span class="tag">   <span class="attr">width</span>=<span class="string">"1"</span> <span class="attr">height</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></code></pre><p>如果使用sandbox，action地址改成<a href="https://www.sandbox.paypal.com/cgi-bin/webscr即可，上面这段还是很容易理解的，看下name和value基本上就能知道每个值的含义了。" target="_blank" rel="noopener">https://www.sandbox.paypal.com/cgi-bin/webscr即可，上面这段还是很容易理解的，看下name和value基本上就能知道每个值的含义了。</a><br>保存用浏览器打开，就会看到一个paypal的按钮，点击过去按照提示操作，就能付款到business指定值的帐户了。<br>这就是一个最简单的paypal支付按钮。<br>再下一篇中会讲一下如何在付款成功之后，将信息返回到你的网站，大部分需求都是客户完成付款后返回信息到网站的数据库，记录网站客服的交易信息。<br>最后稍微了解下为什么海外用户喜欢用自己的网站做生意，而不是像国内一样用淘宝之类的C2C平台。一开始我也很不理解，有免费的平台为什么要自己建设网站还要支付paypal的手续费，后来和客户了解了一下，他们做的事网游虚拟交易，国外最大的C2C平台就是eBay，但只有德国可以售卖虚拟物品，并且eBay上的交易并不是免费的，收取的手续费远远高于paypal的费率，因此，更多的海外用户选择自己建设网站进行电子商务。</p><blockquote><p><strong>此文来自时光旅行，内容已不维护:) </strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://v.moring.pw/mchen/img/2008/7-140504095212.jpg&quot; alt=&quot;Paypal&quot;&gt;&lt;br&gt;本篇主要介绍如何在你的网站上快速加入paypal支付按钮，通过这个按钮，人们可以方便快速的付款到你的paypal帐户。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
+    
+      <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Paypal国际版网站集成简易教程（一）：序言</title>
+    <link href="https://www.chenchen.org/2008/07/09/Paypal_integrated_1.html"/>
+    <id>https://www.chenchen.org/2008/07/09/Paypal_integrated_1.html</id>
+    <published>2008-07-09T12:10:00.000Z</published>
+    <updated>2017-12-28T05:10:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"><br>前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资料非常齐全，而且还提供了开发者沙盒（sandbox），相比之下，国内流行的支付宝还有很长的路要走啊。<br><a id="more"></a></p><p>项目结束的时候就有想法写一篇网站集成paypal的简易教程，方便以后的各位开发者，毕竟看长篇英文资料是很头痛的事情^_^。一直到昨天期末考才结束，所以今天开始写这个教程，其实内容也不多，可能还算不上教程，只能算经验吧。</p><p>主要分为序言、支付按钮、返回信息方式（IPN&PDT;）、实例四部分组成，预计在三天内完成，如果有新内容我临时再加吧。<br>接下来一篇将会介绍如何在网站上快速加入paypal支付按钮。</p><blockquote><p><strong>此文来自时光旅行，内容已不维护:) </strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://v.moring.pw/mchen/img/2008/7-140504095212.jpg&quot; alt=&quot;Paypal&quot;&gt;&lt;br&gt;前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资料非常齐全，而且还提供了开发者沙盒（sandbox），相比之下，国内流行的支付宝还有很长的路要走啊。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
+    
+      <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   

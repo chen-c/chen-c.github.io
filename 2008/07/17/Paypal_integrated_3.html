@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Paypal,踩坑,时光旅行," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Morn.Chen - Hello" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="什么是即时付款通知IPN当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。">
+<meta name="keywords" content="Paypal,踩坑,时光旅行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paypal国际版网站集成简易教程（三）：IPN的使用">
+<meta property="og:url" content="https://www.chenchen.org/2008/07/17/Paypal_integrated_3.html">
+<meta property="og:site_name" content="Morn.Chen - Hello">
+<meta property="og:description" content="什么是即时付款通知IPN当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_0.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_01.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_00.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_02.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_03.jpg">
+<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/paypal_04.jpg">
+<meta property="og:updated_time" content="2017-12-28T08:17:28.460Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Paypal国际版网站集成简易教程（三）：IPN的使用">
+<meta name="twitter:description" content="什么是即时付款通知IPN当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。">
+<meta name="twitter:image" content="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.chenchen.org/2008/07/17/Paypal_integrated_3.html"/>
+
+
+
+
+
+  <title>Paypal国际版网站集成简易教程（三）：IPN的使用 | Morn.Chen - Hello</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Morn.Chen - Hello</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Don't panic!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/atom.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.chenchen.org/2008/07/17/Paypal_integrated_3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Morn.Chen - Hello">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Paypal国际版网站集成简易教程（三）：IPN的使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2008-07-17T20:10:00+08:00">
+                2008-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"></p>
+<blockquote>
+<p>什么是即时付款通知IPN<br>当您收到新的付款交易或者已发生的付款交易的状态发生变化时，PayPal都将异步（即不作为网站付款流程的一部分） 发送付款详细数据到您所指定的URL，以便您了解买家付款的具体情况并做出相应的响应。这个过程我们称作即时付款通知（简称 IPN）。</p>
+</blockquote>
+<a id="more"></a>
+<p>最近事情比较多，一直没有继续更新，不好意思了，今天难得有空，就把最重要的一段先发上来了。<br>相信大部分网站集成Paypal都希望能够实现客户支付完成后返回信息到自己的网站，然后处理这些信息。比如客户在你的网站上购买了一个产品，通过Paypal完成了支付，接着Paypal告诉你的网站客户完成了支付以及支付信息，最后你的网站将这些信息记录到你自己的数据库中，并且将你的客户订单状态设为已支付，接着你就可以进行一系列的相关订单的后续操作。<br>IPN就能帮助我们实现这个功能，IPN示意图如下（来自Paypal.com）：</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_0.jpg" alt="Paypal"></p>
+<p>当客户完成支付，Paypal会在后台通过post方式向你的服务器传送交易数据，来实现网站集成的功能。<br>接下来我们就来看IPN的实现方法。<br>第一步，你需要一个sandbox的帐号，这很重要，因为它能让你随心所欲的进行测试，而不用担心资金在天上飞。注册地址：<a href="https://developer.paypal.com" target="_blank" rel="noopener">https://developer.paypal.com</a><br>第二步，登陆sandbox，新建一个商家帐号（卖方）和一个客户账号（买方），其中卖方帐号必须是Premier或者Business，不然无法使用IPN功能。</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_01.jpg" alt="Paypal"></p>
+<p>新建买家帐号的时候记得在Account Balance中加上金额，不然你就没钱买东西了，如果paypal.com的帐号也能这样加钱多好。<br>新建完两个帐号：</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_00.jpg" alt="Paypal"></p>
+<p>卖家帐号的test mode要设为enabled。<br>选中business帐号，点击下面的Enter Sandbox Test Site进入sandbox Test Site，登录，就像普通Paypal帐号的管理页面一样。</p>
+<p>点击Profile，在Selling Preferences中选择Instant Payment Notification Preferences，点击edit加入IPN信息返回的地址，记得勾上前面那个选项，我是用.net写的接受文件，所以我的IPN地址是<a href="http://www.chenchen.org/ipn.aspx">http://www.chenchen.org/ipn.aspx</a> ,地址只要能在互联网上访问到就可以了。</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_02.jpg" alt="Paypal"></p>
+<p>在Profile -&gt; Selling Preferences -&gt;Website Payment Preferences选项中，有一个Auto Return的选项，将它设为on，并且在下面的return地址中填入你希望的客户支付完成后返回的地址：<br>以上就完成了商家端的设置。</p>
+<p>接下来是你网站上ipn.aspx文件的编写，这个是用来接收支付数据的，是非常关键的一个文件。<br>文件环境，.net 2.0，语言C#。<br>Ipn.aspx文件：此文件不用修改任何东西，代码都在cs文件中。<br>Ipn.aspx.cs文件：关键代码<br>定义一个VerifyIPN()函数：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">VerifyIPN</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">string</span> strFormValues = Request.Form.ToString();</span><br><span class="line">        <span class="keyword">string</span> strNewValue;</span><br><span class="line">        <span class="keyword">string</span> strResponse;</span><br><span class="line">        <span class="keyword">string</span> serverURL = <span class="string">"https://www.sandbox.paypal.com/cgi-bin/webscr"</span>;</span><br><span class="line"></span><br><span class="line">        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(serverURL);</span><br><span class="line">        req.Method = <span class="string">"POST"</span>;</span><br><span class="line">        req.ContentType = <span class="string">"application/x-www-form-urlencoded"</span>;</span><br><span class="line">        strNewValue = strFormValues + <span class="string">"&amp;cmd;=_notify-validate"</span>;</span><br><span class="line">        req.ContentLength = strNewValue.Length;</span><br><span class="line"></span><br><span class="line">        StreamWriter stOut = <span class="keyword">new</span> StreamWriter(req.GetRequestStream(), System.Text.Encoding.ASCII);</span><br><span class="line">        stOut.Write(strNewValue);</span><br><span class="line">        stOut.Close();</span><br><span class="line"></span><br><span class="line">        StreamReader stIn = <span class="keyword">new</span> StreamReader(req.GetResponse().GetResponseStream());</span><br><span class="line">        strResponse = stIn.ReadToEnd();</span><br><span class="line">        stIn.Close();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> strResponse == <span class="string">"VERIFIED"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的作用是判断IPN信息是否来自Pyapal，如果不进行判断，那么恶意用户完全可以模拟一个信息post到你的网站上，让你认为订单已经完成支付，所以，必须首先对接受到的信息进行验证。<br>代码的基本原理，serverURL定义了验证地址，sandbox为：<a href="https://www.sandbox.paypal.com/cgi-bin/webscr，Paypal.com就是https://www.paypal.com/cgi-bin/webscr。" target="_blank" rel="noopener">https://www.sandbox.paypal.com/cgi-bin/webscr，Paypal.com就是https://www.paypal.com/cgi-bin/webscr。</a><br>将paypal发送过来的所有信息加上一个&cmd;=_notify-validate参数，表示对这个信息进行验证，全部发送回paypal验证，如果信息确实存在，则返回VERIFIED字符串。<br>验证成功后，就可以用如下形式获得交易信息：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public partial class paypal_ipn : System.Web.UI.Page</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">Page_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (VerifyIPN())<span class="comment">//验证成功</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">string</span> ppTx = Request.Form[<span class="string">"txn_id"</span>].ToString();<span class="comment">//获取post中的各项变量值</span></span><br><span class="line">                …</span><br><span class="line">            执行将数据写入数据库等操作</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">VerifyIPN</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        具体代码见上。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，就实现了将支付信息传回网站的功能。注：当交易状态发生改变时，paypal也会返回一个ipn，比如完成支付，退款等等。</p>
+<p>介绍一下sandbox中IPN测试工具，登陆sandbox主帐号，就是你在sandbox上注册的那个，不是那些卖家/买家帐号。选择Test Tools -&gt; Instant Payment Notification (IPN) Simulator：输入你的ipn接受文件地址，选择ipn信息的方式，然后会让你填具体信息内容，再点击Send IPN，就能模拟一个ipn到你网站的页面，可以用来测试IPN是否正常工作。</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_03.jpg" alt="Paypal"></p>
+<p>不过这个工具有个小BUG，就是发送的IPN里不包括contact_phone这个变量，但是实际的IPN里是有的，这里要注意一下。<br>注：可以在商家帐号的Profile -&gt; Selling Preferences -&gt;Website Payment Preferences中，选择Contact Telephone Number这一栏，来确定是否需要发送买家联系电话。</p>
+<p><img src="https://v.moring.pw/mchen/img/2008/paypal_04.jpg" alt="Paypal"></p>
+<blockquote>
+<p><strong>此文来自时光旅行，内容已不维护:) </strong></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Paypal/" rel="tag"># Paypal</a>
+          
+            <a href="/tags/踩坑/" rel="tag"># 踩坑</a>
+          
+            <a href="/tags/时光旅行/" rel="tag"># 时光旅行</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2008/07/10/Paypal_integrated_2.html" rel="next" title="Paypal国际版网站集成简易教程（二）：快速加入支付按钮">
+                <i class="fa fa-chevron-left"></i> Paypal国际版网站集成简易教程（二）：快速加入支付按钮
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/11/16/One-year.html" rel="prev" title="祭一年">
+                祭一年 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjczOS85MzAw"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chenc</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chenc</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500569009");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
