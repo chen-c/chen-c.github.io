@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2017-12-28T03:01:37.000Z</updated>
+  <updated>2018-01-17T02:31:14.621Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jenkins使用NodeJS插件完成Vue的可持续集成</title>
+    <link href="https://www.chenchen.org/2018/01/16/Jenkins_NodeJs_Vue_CI.html"/>
+    <id>https://www.chenchen.org/2018/01/16/Jenkins_NodeJs_Vue_CI.html</id>
+    <published>2018-01-16T11:00:39.000Z</published>
+    <updated>2018-01-17T02:31:14.621Z</updated>
+    
+    <content type="html"><![CDATA[<p>项目使用Vue做前端开发，故涉及到使用Jenkins做可持续集成，记录一下其中过程。</p><a id="more"></a><h3 id="Jenkins的安装"><a href="#Jenkins的安装" class="headerlink" title="Jenkins的安装"></a>Jenkins的安装</h3><h4 id="查看一下系统信息"><a href="#查看一下系统信息" class="headerlink" title="查看一下系统信息"></a>查看一下系统信息</h4><p>我使用的是DigitalOcean的服务器，系统版本CentOS 7.4.1708 x64。</p><h4 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install java</span><br></pre></td></tr></table></figure><p>查看一下java版本，应该安装的是openjdk的版本。gcj版本的java会导致jenkins不工作，<a href="https://issues.jenkins-ci.org/browse/JENKINS-743" target="_blank" rel="noopener">JENKINS-743</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">openjdk version <span class="string">"1.8.0_151"</span></span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_151-b12)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)</span><br></pre></td></tr></table></figure></p><h4 id="拉取Jenkins库配置到本地"><a href="#拉取Jenkins库配置到本地" class="headerlink" title="拉取Jenkins库配置到本地"></a>拉取Jenkins库配置到本地</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo</span><br></pre></td></tr></table></figure><h4 id="导入公钥"><a href="#导入公钥" class="headerlink" title="导入公钥"></a>导入公钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key</span><br></pre></td></tr></table></figure><h4 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install jenkins</span><br></pre></td></tr></table></figure><p>yum真是好东西。</p><h4 id="Jenkins配置文件及日志"><a href="#Jenkins配置文件及日志" class="headerlink" title="Jenkins配置文件及日志"></a>Jenkins配置文件及日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/sysconfig/jenkins | more <span class="comment">#默认端口8080</span></span><br><span class="line"><span class="built_in">cd</span> /var/lib/jenkins/logs</span><br><span class="line">cat /var/<span class="built_in">log</span>/jenkins/jenkins.log</span><br></pre></td></tr></table></figure><h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service jenkins start <span class="comment">#停止 stop</span></span><br></pre></td></tr></table></figure><h4 id="访问Jenkins"><a href="#访问Jenkins" class="headerlink" title="访问Jenkins"></a>访问Jenkins</h4><p>url:8080<br>这里有个小坑，我的服务器上的8080端口被占用了，换了一个…</p><h4 id="初始化Jenkins"><a href="#初始化Jenkins" class="headerlink" title="初始化Jenkins"></a>初始化Jenkins</h4><p>浏览器打开地址后，基本上按照页面提示就能完成初始化了，比如获取初始密码，安装插件等。<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/20180116212350.jpg" alt="初始化"></p><h4 id="卸载Jenkins"><a href="#卸载Jenkins" class="headerlink" title="卸载Jenkins"></a>卸载Jenkins</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e jenkins</span><br><span class="line">find / -iname jenkins | xargs -n 1000 rm -rf</span><br></pre></td></tr></table></figure><h3 id="NodeJs编译Vue"><a href="#NodeJs编译Vue" class="headerlink" title="NodeJs编译Vue"></a>NodeJs编译Vue</h3><h4 id="安装NodeJs插件"><a href="#安装NodeJs插件" class="headerlink" title="安装NodeJs插件"></a>安装NodeJs插件</h4><p>Jenkins Dashboard -&gt; 系统管理 -&gt; 管理插件 -&gt; 可选插件<br>过滤里选择NodeJs，勾选插件直接安装。<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_nodejs_plugin.jpg" alt="nodejs_plugin"></p><h4 id="配置NodeJs插件"><a href="#配置NodeJs插件" class="headerlink" title="配置NodeJs插件"></a>配置NodeJs插件</h4><p>Jenkins Dashboard -&gt; 系统管理 -&gt; 全局工具配置<br>找到NodeJs节点，目前最新的LTS版本是8.9.4，选择对应版本安装即可。<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_nodejs_config.png" alt="nodejs_config"></p><h4 id="新建jenkins任务"><a href="#新建jenkins任务" class="headerlink" title="新建jenkins任务"></a>新建jenkins任务</h4><p>Jenkins Dashboard -&gt; 新建任务，构建一个自由风格的软件项目。<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_new_job_step1.png" alt="new_job_setp1"></p><p>选择github项目，vue的初始化项目，<a href="https://github.com/chen-c/test.git/。" target="_blank" rel="noopener">https://github.com/chen-c/test.git/。</a><br>如果找不到GitBucket选项卡，去管理插件中安装下GitBucket插件。<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_new_job_step2.png" alt="new_job_setp2"></p><p>源码管理中选择Git<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_new_job_step3.png" alt="new_job_setp3"></p><p>构建环境中选择Provide Node&amp;npm bin/ folder to PATH，Installation中选择之前安装的NodeJs版本。<br>新增一个构建步骤，选择Execute shell，简单的就先放两个命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure></p><p><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_new_job_step4.png" alt="new_job_setp4"><br>全部完成后保存应用一下。</p><h4 id="立即构建"><a href="#立即构建" class="headerlink" title="立即构建"></a>立即构建</h4><p>点击立即构建，biu~<br><img src="https://v.moring.pw/mchen/img/2018/jenkins/jenkins_new_job_step5.png" alt="new_job_setp5"></p><p>编译完成后的vue就在服务器工作空间的dist文件夹里，后续可以在任务的构建后操作里增加一些复制打包等shell命令，就能完成自动部署等相关功能了。<br>比如本hexo就由Jenkins自动打包并部署到DO上。</p><p>参考链接:</p><blockquote><p><a href="https://segmentfault.com/a/1190000007086764" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007086764</a><br><a href="https://www.cnblogs.com/vipzhou/p/7890016.html" target="_blank" rel="noopener">https://www.cnblogs.com/vipzhou/p/7890016.html</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;项目使用Vue做前端开发，故涉及到使用Jenkins做可持续集成，记录一下其中过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="前端" scheme="https://www.chenchen.org/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="可持续集成" scheme="https://www.chenchen.org/tags/%E5%8F%AF%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序wx.openLocation无效(iOS)</title>
@@ -111,6 +135,54 @@
       <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
       <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>彼岸花</title>
+    <link href="https://www.chenchen.org/2009/01/24/bi_an_hua.html"/>
+    <id>https://www.chenchen.org/2009/01/24/bi_an_hua.html</id>
+    <published>2009-01-23T23:00:00.000Z</published>
+    <updated>2018-01-16T07:26:32.141Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://v.moring.pw/mchen/img/2009/bianhua01.jpg" alt="彼岸花"><br><a id="more"></a><br>花开彼岸本无岸<br>魂落忘川犹在川<br>醉里不知烟波浩<br>梦中依稀灯火寒<br>花叶千年不相见<br>缘尽缘生舞翩迁<br>花不解语花颔首<br>佛渡我心佛空叹</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://v.moring.pw/mchen/img/2009/bianhua01.jpg&quot; alt=&quot;彼岸花&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+      <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>明月千年，三秋之半</title>
+    <link href="https://www.chenchen.org/2008/09/14/ming_yue_qian_nian_san_qiu_zhi_ban.html"/>
+    <id>https://www.chenchen.org/2008/09/14/ming_yue_qian_nian_san_qiu_zhi_ban.html</id>
+    <published>2008-09-14T14:54:00.000Z</published>
+    <updated>2018-01-16T07:26:32.140Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://v.moring.pw/mchen/img/2008/zq01.jpg" alt="Paypal"><br>今天是农历八月十五，即三秋之半，中秋节。<br>自从上了大学，因为家离学校比较远，中秋基本上都是在学校里过的，虽说现在中秋的意义没有过去那么大，但秋天向来是用来伤感的。秋天除了丰收，更多的是秋风下的伤感。<br>今年中秋，本来想酸一下去屋顶赏个月，喝个小酒（可乐也行），吹吹秋风，忆个往昔之类的，结果赶上了台风，吹秋风的愿望倒是让非常满足的实现了。<br><a id="more"></a><br>也不知道为什么，今天晚上的胃口相当好，因为下暴雨，先在寝室吃了一碗多多妙，接着雨停了，非常不爽，出去吃了烤翅、炒饭，又带了两个香蕉慢慢消灭了，在阳台望了会月，我坚信心中有月，就有月。再然后又去吃了果冻、炒粉干，到超市买了瓶百事，全数消灭。<br>晚上爸爸打了个电话来，问候了一声，聊了会家常，妈妈去了云南旅游，应该正玩得开心。这学期准备积点私房钱也去趟云南玩玩，还准备入手一台thinkpad，任务还是比较艰巨的。<br>看着窗外，突然想到了大一的暑假，xman、小超、胖子、我，半夜十二点，躺在信息楼前的小平台，一起唱歌，一起疯，转眼，已经三年了。在过不久，我也许就要离开这个学校，或许，也要结束我的学生生涯了。<br>明月千年，静看人间，阴晴圆缺，三秋之半。<br>S哥刚刚看中了一个巫妖王的手工戒指，继续乐此不疲。寝室貌似有活动，先到这里吧，上了大学，感性思维弱了很多-_-!!<br>最后祝大家中秋快乐，合家团圆:)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://v.moring.pw/mchen/img/2008/zq01.jpg&quot; alt=&quot;Paypal&quot;&gt;&lt;br&gt;今天是农历八月十五，即三秋之半，中秋节。&lt;br&gt;自从上了大学，因为家离学校比较远，中秋基本上都是在学校里过的，虽说现在中秋的意义没有过去那么大，但秋天向来是用来伤感的。秋天除了丰收，更多的是秋风下的伤感。&lt;br&gt;今年中秋，本来想酸一下去屋顶赏个月，喝个小酒（可乐也行），吹吹秋风，忆个往昔之类的，结果赶上了台风，吹秋风的愿望倒是让非常满足的实现了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+      <category term="中秋" scheme="https://www.chenchen.org/tags/%E4%B8%AD%E7%A7%8B/"/>
     
   </entry>
   
