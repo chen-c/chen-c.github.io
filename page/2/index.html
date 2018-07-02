@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Paypal,踩坑,时光旅行," />
+  <meta name="keywords" content="chenchen,陈晨,xiaomu" />
 
 
 
@@ -81,20 +81,13 @@
 
 
 
-<meta name="description" content="前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资">
-<meta name="keywords" content="Paypal,踩坑,时光旅行">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Paypal国际版网站集成简易教程（一）：序言">
-<meta property="og:url" content="https://www.chenchen.org/2008/07/09/Paypal_integrated_1.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Morn.Chen - Hello">
+<meta property="og:url" content="https://www.chenchen.org/page/2/index.html">
 <meta property="og:site_name" content="Morn.Chen - Hello">
-<meta property="og:description" content="前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg">
-<meta property="og:updated_time" content="2017-12-28T05:10:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paypal国际版网站集成简易教程（一）：序言">
-<meta name="twitter:description" content="前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资">
-<meta name="twitter:image" content="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg">
+<meta name="twitter:title" content="Morn.Chen - Hello">
 
 
 
@@ -124,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://www.chenchen.org/2008/07/09/Paypal_integrated_1.html"/>
+  <link rel="canonical" href="https://www.chenchen.org/page/2/"/>
 
 
 
 
 
-  <title>Paypal国际版网站集成简易教程（一）：序言 | Morn.Chen - Hello</title>
+  <title>Morn.Chen - Hello</title>
   
 
 
@@ -149,7 +142,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,9 +246,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -284,7 +278,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Paypal国际版网站集成简易教程（一）：序言</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2008/07/09/Paypal_integrated_1.html" itemprop="url">Paypal国际版网站集成简易教程（一）：序言</a></h1>
         
 
         <div class="post-meta">
@@ -356,13 +352,16 @@
       
 
       
-        <p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"><br>前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资料非常齐全，而且还提供了开发者沙盒（sandbox），相比之下，国内流行的支付宝还有很长的路要走啊。<br><a id="more"></a></p>
-<p>项目结束的时候就有想法写一篇网站集成paypal的简易教程，方便以后的各位开发者，毕竟看长篇英文资料是很头痛的事情^_^。一直到昨天期末考才结束，所以今天开始写这个教程，其实内容也不多，可能还算不上教程，只能算经验吧。</p>
-<p>主要分为序言、支付按钮、返回信息方式（IPN&PDT;）、实例四部分组成，预计在三天内完成，如果有新内容我临时再加吧。<br>接下来一篇将会介绍如何在网站上快速加入paypal支付按钮。</p>
-<blockquote>
-<p><strong>此文来自时光旅行，内容已不维护:) </strong></p>
-</blockquote>
-
+        
+          <p><img src="https://v.moring.pw/mchen/img/2008/7-140504095212.jpg" alt="Paypal"><br>前段时间接到一个外贸网站的项目，集成paypal支付接口的，对象是海外用户，全部用US的信用卡结算。国内有个paypal的中文版，叫贝宝，不过只支持人民币之间的结算，而且提供的功能不多。所以只能使用paypal国际版，也就是paypal.com，习惯性的google了一下相关资料，发现关于paypal.com接口的中文文档并不多，也不详细，只好自己上paypal.com研究，还好paypal上的资料非常齐全，而且还提供了开发者沙盒（sandbox），相比之下，国内流行的支付宝还有很长的路要走啊。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2008/07/09/Paypal_integrated_1.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -377,40 +376,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Paypal/" rel="tag"># Paypal</a>
-          
-            <a href="/tags/踩坑/" rel="tag"># 踩坑</a>
-          
-            <a href="/tags/时光旅行/" rel="tag"># 时光旅行</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2008/07/10/Paypal_integrated_2.html" rel="prev" title="Paypal国际版网站集成简易教程（二）：快速加入支付按钮">
-                Paypal国际版网站集成简易教程（二）：快速加入支付按钮 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -420,11 +393,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -432,15 +408,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjczOS85MzAw"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -673,10 +640,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
@@ -705,17 +668,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
