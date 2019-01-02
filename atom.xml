@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2018-07-02T08:08:26.369Z</updated>
+  <updated>2019-01-02T15:36:50.645Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>慢走，我的2018.</title>
+    <link href="https://www.chenchen.org/2019/01/02/bye-2018.html"/>
+    <id>https://www.chenchen.org/2019/01/02/bye-2018.html</id>
+    <published>2019-01-02T15:45:17.000Z</published>
+    <updated>2019-01-02T15:36:50.645Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="家人"><a href="#家人" class="headerlink" title="家人"></a>家人</h3><p>家人安康，偶有一些小毛小病，也都是一些小插曲。<br>最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。<br>感谢所有亲人们的陪伴和努力，无论过去现在还是将来。</p><h3 id="朋友"><a href="#朋友" class="headerlink" title="朋友"></a>朋友</h3><p>老友虽不常联系，却也是一呼即应，感谢你们一路走来给我的帮助。<br>有了几个有趣的朋友，年纪越大，就会感觉身边留下的朋友越来越少。感谢你们的出现，让我的生活少了那些焦虑和不安，多了那份快乐和美好。<br>未来，我们依旧结伴而行。</p><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>一直佛系的生活，无忧无虑，也在这一年有了些许改变。<br>这或许是过去十年中最差的一年，也可能是未来十年里最好的一年。<br>人们都不希望在最好的时光里，遇见最无能为力的自己。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>沉寂了许久时间，随着年龄的增长，也是渐渐开始理解了那些错综复杂的人际关系。<br>很多道理，只有身陷其中才会明白。工作并没有什么轻松随性，只是因为有人一直在帮你负重前行。<br>焦虑和不安，却是成为了前行的动力。对职业生涯有了更多的坚持和努力，终究我也会成为负重者，有那些值得我付出的人与事。</p><h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><p>只有坚持和努力，<br>只有爱和正义，<br>与善良。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;家人&quot;&gt;&lt;a href=&quot;#家人&quot; class=&quot;headerlink&quot; title=&quot;家人&quot;&gt;&lt;/a&gt;家人&lt;/h3&gt;&lt;p&gt;家人安康，偶有一些小毛小病，也都是一些小插曲。&lt;br&gt;最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。&lt;br&gt;感谢所有亲人们
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="新年" scheme="https://www.chenchen.org/tags/%E6%96%B0%E5%B9%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>UVXY是如何工作的？</title>
@@ -157,9 +182,9 @@
       <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
-    
       <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+      <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
     
   </entry>
   
@@ -181,9 +206,9 @@
       <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
-    
       <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
+    
+      <category term="乱弹" scheme="https://www.chenchen.org/tags/%E4%B9%B1%E5%BC%B9/"/>
     
   </entry>
   
@@ -232,11 +257,11 @@
       <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
-    
       <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
     
       <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
@@ -258,11 +283,11 @@
       <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
-    
       <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
     
       <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
@@ -284,11 +309,11 @@
       <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
-    
       <category term="Paypal" scheme="https://www.chenchen.org/tags/Paypal/"/>
     
       <category term="踩坑" scheme="https://www.chenchen.org/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="时光旅行" scheme="https://www.chenchen.org/tags/%E6%97%B6%E5%85%89%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
