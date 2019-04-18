@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2019-04-18T05:27:05.859Z</updated>
+  <updated>2019-04-18T05:31:04.261Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>java链接ssl alert received HANDSHAKE_FAILURE的一种解决方式</title>
-    <link href="https://www.chenchen.org/2019/04/12/java_handshake_failure.html"/>
-    <id>https://www.chenchen.org/2019/04/12/java_handshake_failure.html</id>
-    <published>2019-04-12T04:32:17.000Z</published>
-    <updated>2019-04-18T05:27:05.859Z</updated>
+    <link href="https://www.chenchen.org/2019/04/18/java_handshake_failure.html"/>
+    <id>https://www.chenchen.org/2019/04/18/java_handshake_failure.html</id>
+    <published>2019-04-18T05:12:17.000Z</published>
+    <updated>2019-04-18T05:31:04.261Z</updated>
     
     <content type="html"><![CDATA[<p>一句话版本：把jdk1.6升级到1.8。^_^</p><a id="more"></a><p>在一个项目中，内网应用通过squid代理访问对端互联网https协议地址时，报如下错误：</p><blockquote><p>javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure</p></blockquote><p>看着就是ssl握手失败，先从代理服务器开始，内网的服务器几百年没有升过级，考虑能升级的就是openssl，squid，curl这三个东西。<br>因为操作系统版本太旧，原来的openssl还是0.98的，curl是7.14版本。先把openssl升级到了1.0.2，古董操作系统能支持的最新版本，使用curl访问依旧报错。接着把curl升级到了7.19.7，访问成功。</p><p>但是在应用中访问依旧报上述的错误，开始考虑ca证书的问题，同样是DigiCert的微信接口访问没有问题，也都是多域名证书。接着是jdk版本，古老的1.6，就顺便去看了下jdk支持的ssl协议，如下图：</p><p><img src="https://v.dogl.xyz/imgblog/WX20190418-110916@2x.png" alt="SSLContext Algorithms"></p><p>jdk1.6缺少了tlsv1.2的支持，同时1.6下的jce安全机制存在bug。<br>可以选择更新jce的jar包，或者升级jdk版本。</p><p>最后，跟开头一样，把jdk从1.6升级到了1.8，访问正常，并不需要升级openssl。</p>]]></content>
     
