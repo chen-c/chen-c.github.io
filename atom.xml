@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2019-01-02T15:36:50.645Z</updated>
+  <updated>2019-04-18T05:27:05.859Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -17,19 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java链接ssl alert received HANDSHAKE_FAILURE的一种解决方式</title>
+    <link href="https://www.chenchen.org/2019/04/12/java_handshake_failure.html"/>
+    <id>https://www.chenchen.org/2019/04/12/java_handshake_failure.html</id>
+    <published>2019-04-12T04:32:17.000Z</published>
+    <updated>2019-04-18T05:27:05.859Z</updated>
+    
+    <content type="html"><![CDATA[<p>一句话版本：把jdk1.6升级到1.8。^_^</p><a id="more"></a><p>在一个项目中，内网应用通过squid代理访问对端互联网https协议地址时，报如下错误：</p><blockquote><p>javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure</p></blockquote><p>看着就是ssl握手失败，先从代理服务器开始，内网的服务器几百年没有升过级，考虑能升级的就是openssl，squid，curl这三个东西。<br>因为操作系统版本太旧，原来的openssl还是0.98的，curl是7.14版本。先把openssl升级到了1.0.2，古董操作系统能支持的最新版本，使用curl访问依旧报错。接着把curl升级到了7.19.7，访问成功。</p><p>但是在应用中访问依旧报上述的错误，开始考虑ca证书的问题，同样是DigiCert的微信接口访问没有问题，也都是多域名证书。接着是jdk版本，古老的1.6，就顺便去看了下jdk支持的ssl协议，如下图：</p><p><img src="https://v.dogl.xyz/imgblog/WX20190418-110916@2x.png" alt="SSLContext Algorithms"></p><p>jdk1.6缺少了tlsv1.2的支持，同时1.6下的jce安全机制存在bug。<br>可以选择更新jce的jar包，或者升级jdk版本。</p><p>最后，跟开头一样，把jdk从1.6升级到了1.8，访问正常，并不需要升级openssl。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一句话版本：把jdk1.6升级到1.8。^_^&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="https://www.chenchen.org/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="JAVA" scheme="https://www.chenchen.org/tags/JAVA/"/>
+    
+      <category term="SSL" scheme="https://www.chenchen.org/tags/SSL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>慢走，我的2018.</title>
     <link href="https://www.chenchen.org/2019/01/02/bye-2018.html"/>
     <id>https://www.chenchen.org/2019/01/02/bye-2018.html</id>
     <published>2019-01-02T15:45:17.000Z</published>
-    <updated>2019-01-02T15:36:50.645Z</updated>
+    <updated>2019-04-18T05:26:10.698Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="家人"><a href="#家人" class="headerlink" title="家人"></a>家人</h3><p>家人安康，偶有一些小毛小病，也都是一些小插曲。<br>最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。<br>感谢所有亲人们的陪伴和努力，无论过去现在还是将来。</p><h3 id="朋友"><a href="#朋友" class="headerlink" title="朋友"></a>朋友</h3><p>老友虽不常联系，却也是一呼即应，感谢你们一路走来给我的帮助。<br>有了几个有趣的朋友，年纪越大，就会感觉身边留下的朋友越来越少。感谢你们的出现，让我的生活少了那些焦虑和不安，多了那份快乐和美好。<br>未来，我们依旧结伴而行。</p><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>一直佛系的生活，无忧无虑，也在这一年有了些许改变。<br>这或许是过去十年中最差的一年，也可能是未来十年里最好的一年。<br>人们都不希望在最好的时光里，遇见最无能为力的自己。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>沉寂了许久时间，随着年龄的增长，也是渐渐开始理解了那些错综复杂的人际关系。<br>很多道理，只有身陷其中才会明白。工作并没有什么轻松随性，只是因为有人一直在帮你负重前行。<br>焦虑和不安，却是成为了前行的动力。对职业生涯有了更多的坚持和努力，终究我也会成为负重者，有那些值得我付出的人与事。</p><h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><p>只有坚持和努力，<br>只有爱和正义，<br>与善良。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="家人"><a href="#家人" class="headerlink" title="家人"></a>家人</h3><p>家人安康。<br>最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。<br>感谢所有亲人们的陪伴和努力，无论过去现在还是将来。</p><h3 id="朋友"><a href="#朋友" class="headerlink" title="朋友"></a>朋友</h3><p>老友虽不常联系，却也是一呼即应，感谢你们一路走来给我的帮助。<br>有了几个有趣的朋友，年纪越大，就会感觉身边留下的朋友越来越少。感谢你们的出现，让我的生活少了那些焦虑和不安，多了那份快乐和美好。<br>未来，我们依旧结伴而行。</p><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>一直佛系的生活，无忧无虑，也在这一年有了些许改变。<br>这或许是过去十年中最差的一年，也可能是未来十年里最好的一年。<br>人们都不希望在最好的时光里，遇见最无能为力的自己。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>沉寂了许久时间，随着年龄的增长，也是渐渐开始理解了那些错综复杂的人际关系。<br>很多道理，只有身陷其中才会明白。工作并没有什么轻松随性，只是因为有人一直在帮你负重前行。<br>焦虑和不安，却是成为了前行的动力。对职业生涯有了更多的坚持和努力，终究我也会成为负重者，有那些值得我付出的人与事。</p><h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><p>只有坚持和努力，<br>只有爱和正义，<br>与善良。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;家人&quot;&gt;&lt;a href=&quot;#家人&quot; class=&quot;headerlink&quot; title=&quot;家人&quot;&gt;&lt;/a&gt;家人&lt;/h3&gt;&lt;p&gt;家人安康，偶有一些小毛小病，也都是一些小插曲。&lt;br&gt;最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。&lt;br&gt;感谢所有亲人们
+        &lt;h3 id=&quot;家人&quot;&gt;&lt;a href=&quot;#家人&quot; class=&quot;headerlink&quot; title=&quot;家人&quot;&gt;&lt;/a&gt;家人&lt;/h3&gt;&lt;p&gt;家人安康。&lt;br&gt;最大的惊喜，莫过于新的家人诞生，在年末的平安夜，新的生命和希望。&lt;br&gt;感谢所有亲人们的陪伴和努力，无论过去现在还是将来。
       
     
     </summary>
