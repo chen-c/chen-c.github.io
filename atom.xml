@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2019-04-18T05:31:04.261Z</updated>
+  <updated>2019-07-16T09:14:51.244Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>期待的夏天</title>
+    <link href="https://www.chenchen.org/2019/07/16/summer_hope.html"/>
+    <id>https://www.chenchen.org/2019/07/16/summer_hope.html</id>
+    <published>2019-07-16T08:45:17.000Z</published>
+    <updated>2019-07-16T09:14:51.244Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>每一个夏天，都独一无二。</p></blockquote><p><img src="https://v.dogl.xyz/imgblog/WechatIMG1149.jpg" alt="夏天"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;每一个夏天，都独一无二。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://v.dogl.xyz/imgblog/WechatIMG1149.jpg&quot; alt=&quot;夏天&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="夏天" scheme="https://www.chenchen.org/tags/%E5%A4%8F%E5%A4%A9/"/>
+    
+      <category term="期待" scheme="https://www.chenchen.org/tags/%E6%9C%9F%E5%BE%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>忙碌，正在毁掉我们的生活.</title>
+    <link href="https://www.chenchen.org/2019/07/15/busy_is_ruining_our_life.html"/>
+    <id>https://www.chenchen.org/2019/07/15/busy_is_ruining_our_life.html</id>
+    <published>2019-07-15T07:45:17.000Z</published>
+    <updated>2019-07-15T09:36:43.850Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>如果你看起来不忙，就没有生产力。<br>有些人看起来很忙，也没有生产力。</p></blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;如果你看起来不忙，就没有生产力。&lt;br&gt;有些人看起来很忙，也没有生产力。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="忙碌" scheme="https://www.chenchen.org/tags/%E5%BF%99%E7%A2%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>java链接ssl alert received HANDSHAKE_FAILURE的一种解决方式</title>
