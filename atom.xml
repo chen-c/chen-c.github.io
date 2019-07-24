@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chenchen.org/"/>
-  <updated>2019-07-16T09:14:51.244Z</updated>
+  <updated>2019-07-24T05:18:31.358Z</updated>
   <id>https://www.chenchen.org/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>十年</title>
+    <link href="https://www.chenchen.org/2019/07/24/ten_years.html"/>
+    <id>https://www.chenchen.org/2019/07/24/ten_years.html</id>
+    <published>2019-07-24T05:17:17.000Z</published>
+    <updated>2019-07-24T05:18:31.358Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>第一个十年，开始承认平凡。</p></blockquote><p><img src="https://v.dogl.xyz/imgblog/10years.jpg" alt="十年"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;第一个十年，开始承认平凡。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://v.dogl.xyz/imgblog/10years.jpg&quot; alt=&quot;十年&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.chenchen.org/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="十年" scheme="https://www.chenchen.org/tags/%E5%8D%81%E5%B9%B4/"/>
+    
+      <category term="平凡" scheme="https://www.chenchen.org/tags/%E5%B9%B3%E5%87%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>期待的夏天</title>
